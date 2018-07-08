@@ -6,7 +6,9 @@ if [ ! -d ~/.git ] || [ -z "$(git -C ~ rev-parse HEAD)" ]; then
     git -C ~ init \
         && git -C ~ remote add origin https://github.com/macosx/home.git \
         && git -C ~ fetch --all --progress \
-        && git -C ~ checkout master --progress
+        && git -C ~ checkout master --progress \
+        && git submodule update --init --recursive \
+        && ~/.vim/bundle/vim-powerline-fonts/install.sh
 fi
 
 ## Install HomeBrew
