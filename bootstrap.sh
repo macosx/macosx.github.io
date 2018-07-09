@@ -73,6 +73,7 @@ done
 brew tap macosx/cask
 
 CASK_PACKAGES="$CASK_PACKAGES android-file-transfer"
+CASK_PACKAGES="$CASK_PACKAGES android-ndk"
 CASK_PACKAGES="$CASK_PACKAGES android-platform-tools"
 CASK_PACKAGES="$CASK_PACKAGES android-sdk"
 CASK_PACKAGES="$CASK_PACKAGES android-studio"
