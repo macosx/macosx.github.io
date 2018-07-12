@@ -34,6 +34,7 @@ rm -rvf ~/Library/Application\ Support/DingTalk
 # clean WeChat
 echo -e "\033[32mScanning ~/Library/Containers/com.tencent.xinWeChat ...\033[0m"
 rm -rvf ~/Library/Containers/com.tencent.*
+rm -rvf ~/Library/Containers/*.com.tencent.*
 
 # clean iPhone Software Updates
 echo -e "\033[32mScanning ~/Library/iTunes/iPhone Software Updates ...\033[0m"
