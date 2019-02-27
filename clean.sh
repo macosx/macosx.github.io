@@ -28,8 +28,9 @@ echo -e "\033[32mScanning ~/Library/Caches ...\033[0m"
 rm -rvf ~/Library/Caches
 
 # clean DingTalk
-echo -e "\033[32mScanning ~/Library/Application\ Support ...\033[0m"
+echo -e "\033[32mScanning ~/Library/Application\ Support/DingTalk ...\033[0m"
 rm -rvf ~/Library/Application\ Support/DingTalk
+rm -rvf ~/Library/Application\ Support/DingTalkMac
 
 # clean WeChat
 echo -e "\033[32mScanning ~/Library/Containers/com.tencent.xinWeChat ...\033[0m"
@@ -39,4 +40,8 @@ rm -rvf ~/Library/Containers/*.com.tencent.*
 # clean iPhone Software Updates
 echo -e "\033[32mScanning ~/Library/iTunes/iPhone Software Updates ...\033[0m"
 rm -rvf ~/Library/iTunes/iPhone\ Software\ Updates/*.ipsw
+
+# clean iOS backup
+echo -e "\033[32mScanning ~/Library/Application\ Support/MobileSync/Backup ...\033[0m"
+rm -rvf ~/Library/Application\ Support/MobileSync/Backup
 
