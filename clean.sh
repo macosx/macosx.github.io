@@ -10,8 +10,7 @@ rm -rvf ~/.cache
 
 # clean gradle caches
 echo -e "\033[32mScanning ~/.gradle ...\033[0m"
-rm -rvf ~/.gradle/caches/jars-*
-rm -rvf ~/.gradle/caches/transforms-*
+rm -rvf ~/.gradle/caches
 rm -rvf ~/.gradle/daemon
 rm -rvf ~/.gradle/wrapper/dists/gradle-*
 
