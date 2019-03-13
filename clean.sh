@@ -45,3 +45,7 @@ rm -rvf ~/Library/iTunes/iPhone\ Software\ Updates/*.ipsw
 echo -e "\033[32mScanning ~/Library/Application\ Support/MobileSync/Backup ...\033[0m"
 rm -rvf ~/Library/Application\ Support/MobileSync/Backup
 
+# clean docker dangling images
+if [ -x "$(command -v docker)" ]; then
+  docker images -f dangling=true -q | xargs docker rmi
+fi
