@@ -49,6 +49,21 @@ TERM_PACKAGES="$TERM_PACKAGES tmux"
 TERM_PACKAGES="$TERM_PACKAGES tree"
 TERM_PACKAGES="$TERM_PACKAGES wget"
 
+for pkg in $TERM_PACKAGES; do
+    if [ ! "$(brew ls --versions $pkg)" ]; then
+        brew install -v $pkg
+    fi
+done
+
+
+## Install java packages
+
+brew tap AdoptOpenJDK/openjdk
+
+if [ ! "$(brew cask ls --versions adoptopenjdk8)" ]; then
+    brew cask install -v adoptopenjdk8
+fi
+
 JAVA_PACKAGES="$JAVA_PACKAGES antlr"
 JAVA_PACKAGES="$JAVA_PACKAGES aspectj"
 JAVA_PACKAGES="$JAVA_PACKAGES cfr-decompiler"
@@ -60,18 +75,15 @@ JAVA_PACKAGES="$JAVA_PACKAGES dex2jar"
 JAVA_PACKAGES="$JAVA_PACKAGES jadx"
 JAVA_PACKAGES="$JAVA_PACKAGES smali"
 
-NODE_PACKAGES="$NODE_PACKAGES babel"
-NODE_PACKAGES="$NODE_PACKAGES webpack"
-
-for pkg in $TERM_PACKAGES $JAVA_PACKAGES $NODE_PACKAGES; do
+for pkg in $JAVA_PACKAGES; do
     if [ ! "$(brew ls --versions $pkg)" ]; then
         brew install -v $pkg
     fi
 done
 
+
 ## Install cask packages
 
-brew tap AdoptOpenJDK/openjdk
 brew tap macosx/cask
 
 CASK_PACKAGES="$CASK_PACKAGES android-file-transfer"
@@ -90,7 +102,6 @@ CASK_PACKAGES="$CASK_PACKAGES google-drive-file-stream"
 CASK_PACKAGES="$CASK_PACKAGES iina"
 CASK_PACKAGES="$CASK_PACKAGES intellij-idea-ce"
 CASK_PACKAGES="$CASK_PACKAGES iterm2"
-CASK_PACKAGES="$CASK_PACKAGES adoptopenjdk8"
 CASK_PACKAGES="$CASK_PACKAGES kitematic"
 CASK_PACKAGES="$CASK_PACKAGES shadowsocksx-ng-r8"
 CASK_PACKAGES="$CASK_PACKAGES sketch"
