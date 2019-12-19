@@ -23,9 +23,10 @@ GNU_PACKAGES="gawk grep gnu-sed"
 
 for pkg in $GNU_PACKAGES; do
     if [ ! "$(brew ls --versions $pkg)" ]; then
-        brew install -v $pkg --with-default-names
+        brew install -v $pkg && echo "export PATH=\"/usr/local/opt/$pkg/libexec/gnubin:\$PATH\"" >> ~/.bash_profile
     fi
 done
+
 
 ## Install core packages
 
@@ -70,6 +71,7 @@ done
 
 ## Install cask packages
 
+brew tap AdoptOpenJDK/openjdk
 brew tap macosx/cask
 
 CASK_PACKAGES="$CASK_PACKAGES android-file-transfer"
@@ -88,7 +90,7 @@ CASK_PACKAGES="$CASK_PACKAGES google-drive-file-stream"
 CASK_PACKAGES="$CASK_PACKAGES iina"
 CASK_PACKAGES="$CASK_PACKAGES intellij-idea-ce"
 CASK_PACKAGES="$CASK_PACKAGES iterm2"
-CASK_PACKAGES="$CASK_PACKAGES java"
+CASK_PACKAGES="$CASK_PACKAGES adoptopenjdk8"
 CASK_PACKAGES="$CASK_PACKAGES kitematic"
 CASK_PACKAGES="$CASK_PACKAGES shadowsocksx-ng-r8"
 CASK_PACKAGES="$CASK_PACKAGES sketch"
