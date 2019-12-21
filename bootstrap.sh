@@ -56,6 +56,17 @@ for pkg in $TERM_PACKAGES; do
 done
 
 
+## Install nvm
+
+if [ ! "$(brew cask ls --versions nvm)" ]; then
+    brew cask install -v nvm \
+            && mkdir ~/.nvm \
+            && echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bash_profile \
+            && echo '[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"' >> ~/.bash_profile \
+            && echo '[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"' >> ~/.bash_profile            
+fi
+
+
 ## Install java packages
 
 brew tap AdoptOpenJDK/openjdk
